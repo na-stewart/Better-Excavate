@@ -38,12 +38,12 @@ end
 	
 
 function gravel_check()
-      success, data = turtle.inspect()
-      while success and data.name == "minecraft:gravel" do
-            turtle.dig()
-            os.sleep(0.5)
-            success, data = turtle.inspect()
-      end  
+	success, data = turtle.inspect()
+    while success and data.name == "minecraft:gravel" do
+    	turtle.dig()
+        os.sleep(0.5)
+        success, data = turtle.inspect()
+     end  
 end
  
 
