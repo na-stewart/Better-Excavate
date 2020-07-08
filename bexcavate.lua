@@ -37,8 +37,7 @@ function place_torch(slot)
 end
  
  
-function dig_forward()
-    turtle.dig()
+function forward()
     while not turtle.forward() do
         turtle.dig()
         turtle.attack()
@@ -50,12 +49,14 @@ end
 function turn_around()
     if turn_right then
         turtle.turnRight()
-        dig_forward()
+        turtle.dig()
+        forward()
         turtle.turnRight()
         turn_right = false
     else    
         turtle.turnLeft()
-        dig_forward()
+        turtle.dig()
+        forward()
         turtle.turnLeft()
         turn_right = true      
     end
@@ -67,13 +68,13 @@ function reset()
     if turn_right then
         turtle.turnRight()
         for z = 1, length, 1 do
-            turtle.forward()
+            forward()
         end
         turtle.turnRight()
-      end
+    end
     for x = 1, width - 1, 1 do
-        turtle.forward()
-      end
+        forward()
+    end
     turtle.turnRight()
     turtle.digUp()
     turtle.up()
@@ -95,7 +96,8 @@ for y = 1, height do
     turn_right = true
     for x = 1, width, 1 do
         for z = 1, length, 1 do
-            dig_forward()
+            turtle.dig()
+            forward()
             torch_placement_check(x, z)          
         end
         if x < width then
