@@ -13,8 +13,8 @@ end
  
 function torch_placement_check(x, z)
     if (x % 7) == 0 and (z % 7) == 0 then
-        slot = 0
-        success, data = turtle.inspectDown()
+        local slot = 0
+        local success, data = turtle.inspectDown()
         if success == false then return end
         for i = 1, 16, 1 do
             data = turtle.getItemDetail(i)
