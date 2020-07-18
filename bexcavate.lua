@@ -12,7 +12,7 @@ end
  
  
 function torch_placement_check(x, z)
-    if (x % 7) == 0 and (z % 7) == 0 or z == 1 then
+    if (x % 7) == 0 or x == 1 and (z % 7) == 0 then
         local slot = 0
         local success, data = turtle.inspectDown()
         if success == false then return end
