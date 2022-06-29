@@ -86,9 +86,9 @@ local function refuel()
     turtle.refuel()
 end  
  
- 
-print("Better Excavate by sunsetdev")
-print("https://github.com/sunset-developer")
+
+print("Better Excavate by sunset-developer and SkyTheCodeMaster.")
+print("https://github.com/sunset-developer/Better-Excavate")
 print("------------------------------------")
 print("Excavation initiated, please monitor occasionally.")
 for y = 1, height do
