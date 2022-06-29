@@ -87,9 +87,9 @@ local function refuel()
 end  
  
 
-print("Better Excavate by sunset-developer and SkyTheCodeMaster.")
+print("Better Excavate by sunset-developer and Sky.")
 print("https://github.com/sunset-developer/Better-Excavate")
-print("------------------------------------")
+print("--------------------------------------------")
 print("Excavation initiated, please monitor occasionally.")
 for y = 1, height do
     refuel()
