@@ -5,13 +5,13 @@ local length = assert(tonumber(args[3]) - 1, "Usage: bexcavate <Width> <Height> 
 local height = assert(tonumber(args[2]), "Usage: bexcavate <Width> <Height> <Length>")
  
  
-function rotate_right()
+local function rotate_right()
     turtle.turnRight()
     turtle.turnRight()
 end
  
  
-function torch_placement_check(x, z)
+local function torch_placement_check(x, z)
     if (x % 8) == 0 and (z % 8) == 0 then
         local slot = 0
         local success, data = turtle.inspectDown()
@@ -27,7 +27,7 @@ function torch_placement_check(x, z)
 end
  
  
-function place_torch(slot)
+local function place_torch(slot)
     if slot > 0 then
         turtle.select(slot)  
         rotate_right()
@@ -37,16 +37,16 @@ function place_torch(slot)
 end
  
  
-function forward()
+local function forward()
     while not turtle.forward() do
         turtle.dig()
         turtle.attack()
-        os.sleep()
+        sleep()
     end
 end
  
  
-function turn_around()
+local function turn_around()
     if turn_right then
         turtle.turnRight()
         turtle.dig()
@@ -63,7 +63,7 @@ function turn_around()
 end
  
  
-function reset()
+local function reset()
     turtle.turnRight()
     if turn_right then
         turtle.turnRight()
@@ -76,12 +76,12 @@ function reset()
         forward()
     end
     turtle.turnRight()
-    turtle.digUp()
-    turtle.up()
+    turtle.digDown()
+    turtle.down()
 end
  
  
-function refuel()
+local function refuel()
     turtle.select(1)
     turtle.refuel()
 end  
