@@ -2,7 +2,7 @@ local args = { ... }
 local turn_right = true
 local width = assert(tonumber(args[1]), "Usage: bexcavate <Width> <Depth> <Length>")
 local length = assert(tonumber(args[3]) - 1, "Usage: bexcavate <Width> <Depth> <Length>")
-local height = assert(tonumber(args[2]), "Usage: bexcavate <Width> <Depth> <Length>")
+local depth = assert(tonumber(args[2]), "Usage: bexcavate <Width> <Depth> <Length>")
  
  
 local function rotate_right()
@@ -91,7 +91,7 @@ print("Better Excavate by sunset and Sky.")
 print("https://github.com/sunset-developer")
 print("------------------------------------")
 print("Excavation initiated, please monitor occasionally.")
-for y = 1, height do
+for y = 1, depth do
     refuel()
     turn_right = true
     for x = 1, width, 1 do
@@ -106,6 +106,6 @@ for y = 1, height do
             reset()
         end
     end
-    print("Layer completed, " .. height - y .." left to go.")
+    print("Layer completed, " .. depth - y .." left to go.")
 end
 print("Excavation complete, enjoy :)")
