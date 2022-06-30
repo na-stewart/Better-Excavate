@@ -13,7 +13,7 @@ Youtube: https://www.youtube.com/watch?v=RuwVSj7AaZ0
 # Usage
 ```
 pastebin get 1MjTDTKr bexcavate
-bexcavate <Width> <Height> <Length>
+bexcavate <Width> <Depth> <Length>
 ```
 Your mining turtle must be placed on the top left of the area you want to excavate.
 
