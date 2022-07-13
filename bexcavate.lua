@@ -80,19 +80,14 @@ local function reset()
     turtle.down()
 end
  
- 
-local function refuel()
-    turtle.select(1)
-    turtle.refuel()
-end  
- 
 
 print("Better Excavate by sunset and Sky.")
 print("https://github.com/sunset-developer")
 print("------------------------------------")
 print("Excavation initiated, please monitor occasionally.")
 for y = 1, depth do
-    refuel()
+    turtle.select(1)
+    turtle.refuel()
     turn_right = true
     for x = 1, width, 1 do
         for z = 1, length, 1 do
