@@ -9,6 +9,16 @@ local function rotate_right()
     turtle.turnRight()
     turtle.turnRight()
 end
+
+
+local function place_torch(slot)
+    if slot > 0 then
+        turtle.select(slot)  
+        rotate_right()
+        turtle.place()
+        rotate_right()
+     end
+end
  
  
 local function torch_placement_check(x, z)
@@ -24,16 +34,6 @@ local function torch_placement_check(x, z)
         end
         place_torch(slot)
     end
-end
- 
- 
-local function place_torch(slot)
-    if slot > 0 then
-        turtle.select(slot)  
-        rotate_right()
-        turtle.place()
-        rotate_right()
-     end
 end
  
  
