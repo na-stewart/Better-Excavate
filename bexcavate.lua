@@ -10,16 +10,6 @@ local function rotate_right()
     turtle.turnRight()
 end
 
-
-local function place_torch(slot)
-    if slot > 0 then
-        turtle.select(slot)  
-        rotate_right()
-        turtle.place()
-        rotate_right()
-     end
-end
- 
  
 local function torch_placement_check(x, z)
     if (x % 8) == 0 and (z % 8) == 0 then
@@ -32,7 +22,12 @@ local function torch_placement_check(x, z)
                 slot = i
             end
         end
-        place_torch(slot)
+        if slot > 0 then
+            turtle.select(slot)  
+            rotate_right()
+            turtle.place()
+            rotate_right()
+        end
     end
 end
  
@@ -81,7 +76,7 @@ local function reset()
 end
  
 
-print("Better Excavate by sunset and Sky.")
+print("Better Excavate")
 print("https://github.com/sunset-developer")
 print("------------------------------------")
 print("Excavation initiated, please monitor occasionally.")
