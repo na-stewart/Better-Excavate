@@ -77,7 +77,7 @@ end
  
 
 print("Better Excavate")
-print("https://github.com/sunset-developer")
+print("https://github.com/na-stewart/Better-Excavate")
 print("------------------------------------")
 print("Excavation initiated, please monitor occasionally.")
 for y = 1, depth do
