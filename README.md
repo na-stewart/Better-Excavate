@@ -8,7 +8,7 @@ Bexcavate is:
 
 Pastebin: https://pastebin.com/1MjTDTKr
 
-Youtube: https://youtu.be/1wQoK_vY5UQ
+Tutorial: https://youtu.be/1wQoK_vY5UQ
 
 # Usage
 ```
