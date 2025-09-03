@@ -6,7 +6,7 @@ Bexcavate is:
 - Liquid proof
 - Mob proof
 
-Pastebin: https://pastebin.com/1MjTDTKr
+Pastebin: https://pastebin.com/WSQU5kdh
 
 Tutorial: https://youtu.be/1wQoK_vY5UQ
 
