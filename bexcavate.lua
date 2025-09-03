@@ -3,7 +3,8 @@ local turn_right = true
 local width = assert(tonumber(args[1]), "Usage: bexcavate <Width> <Depth> <Length>")
 local length = assert(tonumber(args[3]) - 1, "Usage: bexcavate <Width> <Depth> <Length>")
 local depth = assert(tonumber(args[2]), "Usage: bexcavate <Width> <Depth> <Length>")
- 
+local Fuel_per_layer = (width * length) + width + length +1 -- calculates worst case
+
  
 local function rotate_right()
     turtle.turnRight()
@@ -75,14 +76,32 @@ local function reset()
     turtle.down()
 end
  
+local function fueling()
+    turtle.select(1)
+    local current_fuel_level = turtle.getFuelLevel()
+    if current_fuel_level == "unlimited" then --no need to refuel when its unlimited
+        return
+    end
+    if current_fuel_level >= Fuel_per_layer  then --exit func when fuel is sufficient
+        return
+    end
+
+    print("Insufficient Fuel. Please add Fuel to Slot 1")
+    while current_fuel_level < Fuel_per_layer do
+        if turtle.refuel(1) then
+            print("Refueling. (Current Fuel is " .. tostring(turtle.getFuelLevel()) .. " )" )
+        end
+        current_fuel_level = turtle.getFuelLevel()
+    end
+end
 
 print("Better Excavate")
 print("https://github.com/na-stewart/Better-Excavate")
 print("------------------------------------")
 print("Excavation initiated, please monitor occasionally.")
+print("Add Fuel to Slot 1.")
 for y = 1, depth do
-    turtle.select(1)
-    turtle.refuel()
+    fueling()
     turn_right = true
     for x = 1, width, 1 do
         for z = 1, length, 1 do
@@ -97,5 +116,6 @@ for y = 1, depth do
         end
     end
     print("Layer completed, " .. depth - y .." left to go.")
+    print("Fuel Level: " .. tostring(turtle.getFuelLevel()))
 end
 print("Excavation complete, enjoy :)")
